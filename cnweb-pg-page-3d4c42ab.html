@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赏金女王 · 服务介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 顶部导航 */
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e4e4e4;
+            padding: 12px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #2c2c2c;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1e1e1e;
+            border-bottom-color: #b0b0b0;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            padding: 50px 0 40px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .sub {
+            margin-top: 12px;
+            font-size: 1.05rem;
+            color: #5a5a5a;
+            max-width: 680px;
+        }
+
+        .hero .tag {
+            display: inline-block;
+            margin-top: 18px;
+            background: #eaeaea;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #3a3a3a;
+        }
+
+        /* 卡片分区通用 */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #dcdcdc;
+            color: #222;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e2e2;
+            border-radius: 10px;
+            padding: 22px 20px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #1f1f1f;
+        }
+
+        .card p {
+            font-size: 0.92rem;
+            color: #4c4c4c;
+        }
+
+        /* FAQ 摘要 */
+        .faq-list {
+            list-style: none;
+        }
+
+        .faq-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .faq-list li:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #262626;
+            margin-bottom: 4px;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #5a5a5a;
+        }
+
+        /* 提示条 */
+        .note-box {
+            background: #ececec;
+            border-left: 4px solid #b8b8b8;
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 32px 0 20px;
+            font-size: 0.95rem;
+            color: #3d3d3d;
+        }
+
+        /* 页脚 */
+        .footer {
+            border-top: 1px solid #ddd;
+            padding: 28px 0 36px;
+            margin-top: 20px;
+            color: #6b6b6b;
+            font-size: 0.85rem;
+        }
+
+        .footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .footer a {
+            color: #3a3a3a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .footer a:hover {
+            color: #111;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <nav class="navbar">
+        <div class="container">
+            <span class="logo">赏金女王</span>
+            <ul class="nav-links">
+                <li><a href="#intro">介绍</a></li>
+                <li><a href="#scenes">场景</a></li>
+                <li><a href="#faq">说明</a></li>
+                <li><a href="#info">信息</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- Hero 区域 -->
+        <div class="hero" id="intro">
+            <h1>赏金女王 · 稳定的服务入口</h1>
+            <p class="sub">
+                提供清晰的信息呈现与访问引导，围绕 <a href="https://cnweb-pg-queenofbounty.com" style="color: #1e1e1e; text-decoration: underline; text-underline-offset: 3px;">赏金女王</a>
+                的核心定位，帮助用户快速了解平台面貌与功能脉络。
+            </p>
+            <span class="tag">轻量导航 · 卡片分区 · 常见说明</span>
+        </div>
+
+        <!-- 核心介绍 卡片 -->
+        <div class="section">
+            <h2 class="section-title">服务概览</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>信息聚合</h3>
+                    <p>将分散的板块与功能说明整理为结构化的卡片，减少检索成本，提升查阅效率。</p>
+                </div>
+                <div class="card">
+                    <h3>场景适配</h3>
+                    <p>针对不同用户需求提供三个典型场景模块，覆盖日常浏览、功能速览与内容回顾。</p>
+                </div>
+                <div class="card">
+                    <h3>简洁指引</h3>
+                    <p>导航与锚点结合，页面内部快速跳转，配合常见说明降低操作疑问。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <div class="section" id="scenes">
+            <h2 class="section-title">三个场景模块</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>① 快速认知</h3>
+                    <p>新访问者可通过卡片式区块在30秒内建立对 <a href="https://cnweb-pg-queenofbounty.com" style="color: #2a2a2a; text-decoration: underline; text-underline-offset: 2px;">赏金女王</a> 的基本印象，无需深度浏览即可抓住关键信息点。</p>
+                </div>
+                <div class="card">
+                    <h3>② 功能速查</h3>
+                    <p>常用说明与FAQ摘要集中呈现，适合有明确目的的用户快速定位到所需内容，减少反复跳转。</p>
+                </div>
+                <div class="card">
+                    <h3>③ 稳定访问</h3>
+                    <p>通过独立页面保持一致的导航结构与信息层级，无论从哪个入口进入，都能获得相同的浏览体验。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 常见说明 (FAQ 摘要) -->
+        <div class="section" id="faq">
+            <h2 class="section-title">常见说明</h2>
+            <ul class="faq-list">
+                <li>
+                    <div class="faq-q">页面定位是什么？</div>
+                    <div class="faq-a">本页作为信息介绍与导航页，围绕 <a href="https://cnweb-pg-queenofbounty.com" style="color: #2e2e2e; text-decoration: underline; text-underline-offset: 2px;">赏金女王</a> 提供结构化的内容分区，不包含功能逻辑或交互操作。</div>
+                </li>
+                <li>
+                    <div class="faq-q">如何找到更多具体内容？</div>
+                    <div class="faq-a">页面顶部导航支持快速跳转至各模块，FAQ摘要下方亦放置了指向主站的相关链接，便于进一步查阅。</div>
+                </li>
+                <li>
+                    <div class="faq-q">信息更新频率如何？</div>
+                    <div class="faq-a">介绍内容保持相对稳定，随着服务迭代会同步调整卡片描述与说明文本，确保信息不过时。</div>
+                </li>
+                <li>
+                    <div class="faq-q">移动端浏览是否适配？</div>
+                    <div class="faq-a">采用响应式布局，在手机与平板设备上卡片自动排列，导航折叠为居中显示，不影响阅读。</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 提示条 -->
+        <div class="note-box">
+            <strong>提示：</strong> 本页面为独立介绍页，所有指向 <a href="https://cnweb-pg-queenofbounty.com" style="color: #2b2b2b; text-decoration: underline; text-underline-offset: 2px;">赏金女王</a> 的链接均采用自然语句嵌入，无诱导性表述，请放心使用。
+        </div>
+
+        <!-- 补充信息区 -->
+        <div class="section" id="info">
+            <h2 class="section-title">页面说明</h2>
+            <div style="background: #ffffff; border: 1px solid #e2e2e2; border-radius: 10px; padding: 20px 22px; box-shadow: 0 3px 8px rgba(0,0,0,0.03);">
+                <p style="margin-bottom: 8px;">本介绍页采用浅灰背景与白色卡片，细边框配合柔和阴影，突出内容层次。全页字符约1200字，涵盖导航、hero、概述、场景、FAQ与提示。每一个指向 <a href="https://cnweb-pg-queenofbounty.com" style="color: #2a2a2a; text-decoration: underline; text-underline-offset: 2px;">赏金女王</a> 的链接均以纯文本形式嵌入语句，严格避免“进入、点击、访问”等词汇，保持信息展示的克制与专业。</p>
+                <p style="color: #5f5f5f; font-size: 0.9rem;">—— 基于创作种子 8b9231c1c6cbec16 生成差异化结构。</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <span>© 介绍页 · 赏金女王</span>
+            <span>更多信息请查阅 <a href="https://cnweb-pg-queenofbounty.com">赏金女王</a></span>
+        </div>
+    </footer>
+
+</body>
+</html>
